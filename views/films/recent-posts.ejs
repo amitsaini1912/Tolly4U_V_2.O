@@ -1,0 +1,17 @@
+<div class="recent-posts-container">
+    <div class=" row-cols-2 row g-4">
+        <% for(let film of allFilms.slice(0,4)){ %>
+            <a href="/<%=film.url%>" class="film-link">
+                <div class="card col">
+                    <img src="<%= film.filmPoster %>" class="card-img-top"
+                        alt="Download <%=film.originalTitle%> movie poster">
+
+                    <p>
+                        <%= film.title %>
+                    </p>
+                </div>
+            </a>
+            <% } %>
+
+    </div>
+</div>

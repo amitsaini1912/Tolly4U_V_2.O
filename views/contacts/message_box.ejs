@@ -1,0 +1,17 @@
+<% layout("./layouts/boilerplate.ejs") -%>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+    <style>
+        .message-card{
+            margin-right: 2rem;
+        }
+    </style>
+    <% for(message of Messages){  %>
+        <div class="card message-card border-info mb-3 col" style="max-width: 18rem;">
+            <div class="card-header"><b><%= message.name %></b></div>
+            <div class="card-body">
+              <h6 class="card-text">Email: <b><%= message.email %></b></h6>
+              <p class="card-text mt-3"><%= message.message %></p>
+            </div>
+        </div>
+    <% } %>
+</div>    

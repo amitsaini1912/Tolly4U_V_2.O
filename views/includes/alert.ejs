@@ -1,0 +1,82 @@
+<div class="alert-popup">
+    <span class="close-popup">X</span>
+    <p><span style="color: #ff0000; font-weight: bold;">Alert</span><br><br>
+    Please use <a href="https://adguard.com/en/download.html" rel="nofollow" style="color: #ff0000;">VPN</a> to watch content online and for fast download.</p>
+    <div class="widget-join-telegram-icon">
+        <a href="https://t.me/new_movies_tolly4uofficial" rel="nofollow noopener" target="_blank" class="telegram-btn">
+            <i class="fab fa-telegram-plane"></i> &nbsp;Join Our Telegram Channel
+        </a>
+    </div>
+</div>
+
+<style>
+  /* Container for the popup */
+.alert-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Add a subtle shadow */
+    padding: 10px;
+    margin: 0;
+    border-radius: 10px; /* Rounded corners */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Close button */
+.close-popup {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff; /* Set your desired color */
+}
+
+/* Show the popup when needed */
+.alert-popup.show {
+    display: block;
+}
+
+</style>
+
+<script>
+    // Check if the popup has been shown in the last 2 hours
+    function canShowPopup() {
+        if (!lastShownTime) return true; // If never shown before, can show now
+
+        var currentTime = new Date().getTime();        var lastShownTime = localStorage.getItem('lastShownTime');
+
+        var timeDiff = currentTime - parseInt(lastShownTime);
+        var hoursDiff = timeDiff / (2000 * 60 * 60); // Convert milliseconds to hours
+
+        return hoursDiff >= 2; // Show the popup if it's been more than 2 hours since the last time
+    }
+
+    // Show the popup
+    function showPopup() {
+        if (canShowPopup()) {
+            var popup = document.querySelector('.alert-popup');
+            if (popup) {
+                popup.style.display = 'block';
+                localStorage.setItem('lastShownTime', new Date().getTime().toString());
+            }
+        }
+    }
+
+    // Close the popup
+    document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('close-popup')) {
+            var popup = document.querySelector('.alert-popup');
+            if (popup) {
+                popup.style.display = 'none';
+            }
+        }
+    });
+
+    // Call showPopup when the page loads
+    document.addEventListener('DOMContentLoaded', showPopup);
+</script>

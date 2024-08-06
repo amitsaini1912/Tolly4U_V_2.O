@@ -1,0 +1,67 @@
+<% layout("./layouts/boilerplate.ejs") -%>
+
+<!-- Home Search Bar -->
+<style>
+   /* Style the search input and button */
+   .search-inp-home {
+       width: 100%;
+       max-width: 300px; /* Adjust as needed */
+   }
+
+   .search-btn-home {
+       margin-left: 10px;
+   }
+
+   /* Center the search bar horizontally */
+   .d-flex-home {
+       justify-content: center;
+       display: flex;
+   }
+
+   /* Hide the search bar on larger screens */
+   @media screen and (min-width: 991px) {
+            .search-inp-home,
+            .home-search-container,
+            .search-btn-home {
+                display: none;
+            }
+        }
+    
+   .search-btn-home{
+    background-color: #fe424d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-color: #fe424d;
+   }
+  .search-btn-home i{
+    margin-right: 0.5rem;
+  }
+  .search-btn-home:hover{
+    background-color: #212020;
+    color: #fff;
+  }
+</style>
+
+<div class="home-search-container mb-3">
+   <form method="POST" action="/search?_method=PUT" class="d-flex-home" role="search">
+       <input class="form-control me-2 search-inp-home" name="input" type="search" placeholder="Search for a movie or web series" aria-label="Search">
+       <button class="btn btn-primary search-btn-home" type="submit"><i class="fa-solid fa-search"></i>Search</button>
+   </form>
+</div>
+
+<!-- Home Page Header -->
+<div class="home-header mb-3 div-container">
+   <header class="message" style="text-align: center;">
+      <h6 style="font-size: 17px;"><b><span style="color: #fe424d;">Tolly4U</span> : Welcome to the official website bolly4u.org</b></h6>
+      <h2 style="font-size: 17px;"><b>Your Movie Hub: Tolly4U Instant Downloads and Stream Available at bolly4u!</b></h2>
+      <h1 style="font-size: 17px;"><b>Download and Watch Free HD Movies at Bolly4u: Latest Bollywood, Hollywood, and Regional Films.</b></h1>
+   </header>
+</div>
+
+<!-- Trending Movies -->
+<%- include("../films/trending.ejs") -%>
+
+<!-- All Films Index -->
+<%- include("../films/allFilmsIndex.ejs") -%>
+    

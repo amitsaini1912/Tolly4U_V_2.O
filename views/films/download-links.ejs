@@ -1,0 +1,180 @@
+
+<!-- WEB SERIES DOWNLOAD LINKS -->
+
+<% if(film && film.episodes && film.episodes.length !== 0){
+  let episodes = film.episodes;
+  let episodesData = episodes.filter(link => link.trim() !== "");  %>
+
+<div class="links-wraper episode-links">
+    <h2 style="font-size: 24px; margin-bottom: 10px; margin-top: 40px;"
+     id="episode-link-heading">Episode Links</h2><hr id="episode-link-heading">
+    <div class="download-links mt-3">
+      
+    <% let lengthOfArr = episodesData.length;
+      for(let i = 0; i<lengthOfArr; i++){ %>
+        <span class="link-1" style="margin-right: 1rem;">
+          <a href="<%=episodes[i]%>" rel="nofollow" target=_blank>
+            <button class="btn preBtn btn-outline-info mt-1"> Episode <%= i+1%></button>
+          </a>
+        </span>
+      <% } %>
+    </div>
+</div>
+<% } %>
+
+<!-- 1080p DOWNLOAD LINKS -->
+
+<% if(film && film.links1080p && film.links1080p.length !== 0){
+  let revlinks1080p = film.links1080p; 
+  let copyRevLinks1080p = revlinks1080p.filter(link => link.trim() !== "");
+  let links1080p = [...copyRevLinks1080p].reverse(); 
+  %>
+
+  <div class="links-wraper 1080p-links mt-3">
+    <h2 style="font-size: 24px; margin-bottom: 10px; margin-top: 40px;">
+      1080P Links 
+      <%if(film && film.fileSizes && film.fileSizes.length !== 0){%>
+        <span>[ <%=film.fileSizes[0]%> ]</span>
+      <% } %>
+    </h2><hr>
+    <div class="download-links mt-3">
+      <span class="link-1" style="margin-right: 1rem;">
+        <a href="<%=film.links1080p[0]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">Direct Link</button>
+        </a>
+      </span>
+
+      <%if(film.links1080p.length >= 2){ %>
+      <span style="margin-right: 1rem;" class="link">
+        <a href="<%=film.links1080p[1]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">G-Drive Link</button>
+        </a>
+      </span> 
+      <% } %>
+
+      <%if(film.links1080p.length >= 3){%>
+      <span class="link" style=" margin-right: 1rem;"> 
+        <a href="<%=film.links1080p[2]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">Torrent Link</button>
+        </a>
+      </span>
+      <% } %>
+
+      <%if(film.links1080p.length >= 4){%>
+      <span class="link" style=" margin-right: 1rem;">
+        <a href="<%=film.links1080p[3]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">Other Links</button>
+        </a>
+      </span>
+      <% } %>
+
+    </div>
+
+  </div>
+
+<% } %>
+
+
+<!-- 720P DOWNLOAD LINKS -->
+
+<% if(film && film.links720p && film.links720p.length !== 0){
+  let revlinks720p = film.links720p; 
+  let copyRevLinks720p = revlinks720p.filter(link => link.trim() !== "");
+  let links720p = [...copyRevLinks720p].reverse();
+ %>
+
+  <div class="links-wraper 720p-links mt-3">
+    <h2 style="font-size: 24px; margin-bottom: 10px; margin-top: 40px;">
+      
+      720P Links 
+      <%if(film && film.fileSizes && film.fileSizes.length !== 0){%>
+        <span>[ <%=film.fileSizes[1]%> ]</span>
+      <% } %>  
+    </h2><hr>
+    <div class="download-links mt-3">
+
+      <span class="link-1" style="margin-right: 1rem;">
+        <a href="<%=film.links720p[0]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">Direct Link</button>
+        </a>
+      </span>
+
+      <%if(film.links720p.length >= 2){%>
+      <span style=" margin-right: 1rem;" class="link">
+        <a href="<%=film.links720p[1]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">G-Drive Link</button>
+        </a>
+      </span> 
+      <% } %>
+
+      <%if(film.links720p.length >= 3){%>
+      <span class="link" style=" margin-right: 1rem;"> 
+        <a href="<%=film.links720p[2]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">Torrent Link</button>
+        </a>
+      </span>
+      <% } %> 
+      
+      <%if(film.links720p.length >= 4){%>
+      <span class="link" style=" margin-right: 1rem;">
+        <a href="<%=film.links720p[3]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">Other Links</button>
+        </a>
+      </span>
+      <% } %> 
+
+    </div>
+  </div>
+
+<% } %>
+
+
+<% if(film && film.links480p && film.links480p.length !== 0){
+  let revlinks480p = film.links480p; 
+  let links480p = [...revlinks480p].reverse(); %>
+
+  <div class="links-wraper 480p-links mt-3">
+    <h2 style="font-size: 24px; margin-bottom: 10px; margin-top: 40px;">
+      480P Links 
+      <%if(film && film.fileSizes && film.fileSizes.length !== 0){%>
+        <span>[ <%=film.fileSizes[2]%> ]</span>
+      <% } %>
+    </h2>
+    <hr>
+    <div class="download-links mt-3">
+
+      <span class="link-1" style="margin-right: 1rem;">
+        <a href="<%=film.links480p[0]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">Direct Link</button>
+        </a>
+      </span>
+
+      <%if(film.links480p.length >= 2){%>
+      <span style="margin-right: 1rem;" class="link">
+        <a href="<%=film.links480p[1]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">G-Drive Link</button>
+        </a>
+      </span> 
+      <% } %>
+
+      <%if(film.links480p.length >= 3){%>
+      <span class="link" style="margin-right: 1rem;"> 
+        <a href="<%=film.links480p[2]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">Torrent Link</button>
+        </a>
+      </span>
+      <% } %>
+
+      <%if(film.links480p.length >= 4){%>
+      <span class="link" style="margin-right: 1rem;">
+        <a href="<%=film.links480p[3]%>" rel="nofollow" target=_blank>
+          <button class="btn preBtn btn-outline-info mt-1">Other Links</button>
+        </a>
+      </span>
+      <% } %>
+
+    </div>
+
+  </div>
+ 
+  <% } %>  

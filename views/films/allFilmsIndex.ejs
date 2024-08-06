@@ -1,0 +1,39 @@
+<% layout("./layouts/boilerplate.ejs") -%>
+    <div class="letest-movies-container div-container">
+        <p class="d-inline-flex gap-1">
+            <a class="btn btn-primary btn-letest" data-bs-toggle="collapse" href="#" role="button" aria-expanded="false"
+                aria-controls="collapseExample">
+                Latest Movies &nbsp;<i class="fa-sharp fa-solid fa-circle-chevron-down"></i>
+            </a>
+        </p>
+        <div class=" row-cols-2 row-cols-md-4 row-cols-lg-6 row g-4">
+            <% for(let film of allFilms.slice(6,48)){ %>
+                <a href="/<%=film.url%>" class="film-link">
+                    <div class="card col">
+                        <img src="<%= film.filmPoster %>" class="card-img-top" alt="Download <%=film.originalTitle%> movie poster"
+                            style="height: 15rem;">
+                        <div class="card-body card-img-overlay">
+                            <p class="card-title">
+                                <%= film.originalTitle %>
+                            </p>
+                        </div>
+                        <div class="film-details">
+                            <p><%= film.title %></p>
+                            <p><%= film.description%></p>
+                        </div>
+                    </div>
+                </a>
+            <% } %>
+        </div>
+<style>
+    .see-more-btn-container{
+        text-align: center;
+        margin-top: 25px;
+    }
+</style>
+        <div class="see-more-btn-container">
+            <a href="/allfilms?page=2">
+               <button class="btn nextBtn btn-outline-info" type="submit">See More</button>
+            </a>
+        </div>
+    </div>

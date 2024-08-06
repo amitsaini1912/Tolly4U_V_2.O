@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /contactus
+Disallow: /search
+
+Sitemap: https://tolly4u.online/sitemap.xml

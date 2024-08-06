@@ -1,0 +1,181 @@
+<%- layout("./layouts/boilerplateShow.ejs") -%>
+<%- include("../includes/alert.ejs") -%>
+
+  <style>
+    .show-page-container {
+      display: flex;
+      width: 100%;
+    }
+
+    .site-main-container {
+      margin-right: 20px;
+      flex: 2.8;
+    }
+
+    .sitebar-right-container {
+      flex: 1.2;
+    }
+
+    /* Hide the sidebar-right on small screens */
+    @media screen and (max-width: 991px) {
+      .sitebar-right-container {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      .sitebar-main-container {
+        display: none;
+      }
+    }
+
+
+    .how-to-download a {
+      color: #fe424d;
+      font-weight: 500;
+    }
+
+    .how-to-download a:hover {
+      color: black;
+    }
+  </style>
+  <div class="show-page-container">
+    <div class="site-main-container">
+      <!-- video-Player -->
+      <div class="video-player-container">
+        <div class="container" style="position: relative; padding-bottom: 56.25%; /* 16:9 aspect ratio */ height: 0;">
+            <iframe rel="nofollow" frameborder="0" scrolling="0" allowfullscreen src="https://short.ink/EH9A7rlRe9"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; margin-top: -1rem;"
+                sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation">
+            </iframe>
+        </div>
+    </div>
+
+      <!-- Film Title -->
+      <div class="film-title-container div-container mt-3" style="text-align: center;">
+        <div class="title">
+          <h1 style="font-size: 24px;">
+            <%= film.title %>
+          </h1>
+        </div>
+        <div class="title">
+          <h2 style="font-size: 16px; font-weight: 400; line-height: 1.5rem;">
+            <%= film.description %>
+          </h2>
+        </div>
+         
+        <div class="how-to-download mt-3">
+          <a href="#"><i class="fa-solid fa-download"></i> How to Download <i class="fa-solid fa-download"></i></a>
+        </div>
+      
+      </div>
+
+      <!-- film-deails -->
+      <div class="film-about-container div-container mt-3 mb-3">
+        <div class="film-about row-cols-1 row-cols-lg-2 row-cols-md-2 row">
+          <div class="film-poster col">
+            <img src="<%= film.filmPoster %>" class="card-img-top mt-2 mb-2" alt="Film_poster"
+              style="height: 18rem; width: 13rem;">
+          </div>
+          <div class="film-details-show col mt-2">
+            <p style="font-weight: 700;">Original title:- <b style="color: #fe424d;">
+                <%= film.originalTitle %>
+              </b></p>
+            <p><span style="font-weight: 700;">Story:-</span>
+              <%= film.story %>
+            </p>
+            <p><span style="font-weight: 700;">Genre:-</span>
+              <%= film.genre %>
+            </p>
+            <p><span style="font-weight: 700;">Casts:-</span>
+              <%= film.casts %>
+            </p>
+            <p><span style="font-weight: 700;">Directors:-</span>
+              <%= film.directors %>
+            </p>
+            <p><span style="font-weight: 700;">Runtime:-</span>
+              <%= film.runtime %>
+            </p>
+            <p><span style="font-weight: 700;">Release Date:-</span>
+              <%= film.releaseDate %>
+            </p>
+          </div>
+          <!-- <div class="film-react col">
+          <div class="film-react-container row row-cols-3">
+            <div class="film-react-btn like-icon-container col">
+              <div class="like-icon">
+                <i class="fa-solid fa-thumbs-up"></i>0
+              </div>
+            </div>
+            <div class="film-react-btn dislike-icon-container col">
+              <div class="dislike-icon">
+                <i class="fa-solid fa-thumbs-down"></i>0
+              </div>
+            </div>
+          </div>
+        </div> -->
+        </div>
+      </div>
+
+      <%if(film &&film.screenshoots && film.screenshoots.length !== 0){%>
+      <div class="film-screenshoots-container div-container mb-3" style="text-align: center;">
+        <h3 style="font-size: 24px; margin-bottom: 20px;"><i class="fa-regular fa-eye" style="color: #fe424d;"></i>
+          Screenshots: (Must See Before Downloading)… <i class="fa-regular fa-eye" style="color: #fe424d;"></i></h3>
+        <%- include("../films/screenshoots-carousel.ejs") -%>
+      </div>
+      <%}%>
+
+      <div class="film-download-links-container div-container mb-3" style="text-align: center;">
+        <h1 style="font-size: 24px; margin-bottom: 20px; text-decoration: underline;"><i
+            class="fa-solid fa-download"></i><i class="fa-solid fa-download"></i>
+          <%= film.title %> Links<i class="fa-solid fa-download"></i><i class="fa-solid fa-download"></i>
+        </h1>
+
+        <% if(film && film.videoDownload1 && film.videoDownload2){ %>
+          <div class="download-links mt-3">
+            <span class="link-1" style="margin-right: 1rem;">
+              <a href="<%= film.videoDownload1%>" rel="nofollow" target=_blank>
+                <button class="btn preBtn btn-outline-info mt-1">Download 1080P</button>
+              </a>
+            </span>
+            <span class="link-2" style="margin-right: 1rem;">
+              <a href="<%= film.videoDownload2%>" rel="nofollow" target=_blank>
+                <button class="btn preBtn btn-outline-info mt-1">Download 720P</button>
+              </a>
+            </span>
+          </div>
+        <% } %> 
+
+        <%- include("../films/download-links.ejs") -%>
+      </div>
+          
+      <div class="film-download-links-container div-container mb-3" style="text-align: center;">
+        <%- include("../films/site-main-join-telegram.ejs") -%>
+      </div>
+
+      <!-- <div class="site-main-join-telegram-container div-container">
+        <div class="site-main-join-telegram">
+          <%- include("../films/site-main-join-telegram.ejs") -%>
+        </div>
+      </div> -->
+
+      <!-- releted Content -->
+      <div class="see-as-well-container div-container">
+        <div class="see-as-well">
+          <%- include("../categories/seeAsWell.ejs") -%>
+        </div>
+      </div>
+      <div class="sitebar-main-container">
+        <%- include("../films/sidebar.ejs") -%>
+      </div>
+
+    </div>
+
+
+    <!-- Right Sitebar       -->
+    <div class="sitebar-right-container">
+      <%- include("../films/sidebar.ejs") -%>
+    </div>
+
+  </div>
+

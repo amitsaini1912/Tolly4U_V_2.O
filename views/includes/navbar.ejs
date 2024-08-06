@@ -1,0 +1,54 @@
+<style>
+  .search-btn{
+    background-color: #fe424d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    
+    
+  }
+  .search-btn i{
+    margin-right: 0.5rem;
+  }
+  .search-btn:hover{
+    background-color: #212020;
+    color: #fff;
+  }
+  .navbar{
+    padding: 0px;
+    margin: 0px;
+  }
+  .container-fluid, .navbar .navbar-nav, .navbar-toggler, .navbar-toggler-icon {
+    background-color: #f8f9fa !important;
+  }
+  #navbarNavAltMarkup{
+    background-color: #f8f9fa !important;
+  }
+  
+</style>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="https://res.cloudinary.com/drwdhpfou/image/upload/h_50,w_200/v1705564589/Web_capture_18-1-2024_13344_manage.wix.com_c8hwdf.jpg" alt="Tolly4U_logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto films-nav">
+          <a class="nav-link active" href="/"><b><i class="fa-solid fa-house"></i> Home</b></a>
+          <a class="nav-link active" href="/bollywood"><b>|&nbsp;<i class="fa-solid fa-star"></i> Bollywood</b></a>
+          <a class="nav-link active" href="/adult"><b>|&nbsp;<i class="fa-solid fa-ghost"></i></i> 18+[Adult]</b></a>
+          <a class="nav-link active" href="/webseries"><b>|&nbsp;<i class="fa-solid fa-video"></i> Web Series</b></a>
+          <a class="nav-link active" href="/hollywood"><b>|&nbsp;<i class="fa-solid fa-trophy"></i> Hollywood</b></a>
+        </div>
+        <div class="navbar-nav ms-auto mt-1 mb-1">
+          <form method="POST" action="/search?_method=PUT" class="d-flex" role="search">
+            <input class="form-control me-2 search-inp" name="input" type="search" placeholder="Search for a movie or web series" aria-label="Search">
+            <button class="btn search-btn" type="submit"><i class="fa-solid fa-search"></i>Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</nav>

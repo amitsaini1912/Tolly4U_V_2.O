@@ -1,0 +1,174 @@
+<style>
+.sidebar-container {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.widget {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    /* border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.widget-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.widget-join-telegram-icon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #0088cc;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.widget-join-telegram-icon a:hover {
+    background-color: #0077bb;
+}
+
+.widget-search .form-control {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.widget-search .btn {
+    background-color: #333;
+    color: #fff;
+}
+
+.widget-recent-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.widget-recent-posts ul li {
+    margin-bottom: 10px;
+}
+
+.widget-recent-posts ul li a {
+    text-decoration: none;
+    color: #0077bb;
+}
+
+.widget-recent-posts ul li a:hover {
+    text-decoration: underline;
+}
+
+.widget_categories select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.widget-for-ad{
+    margin-top: 200px;
+}
+.sidebar-search-btn{
+    background-color: #fe424d !important;
+    color: #fff !important ;
+}
+.sidebar-search-btn:hover{
+    background-color: #212020 !important;
+    color: #fff !important;
+}
+
+</style>
+
+<div class="sidebar-container">
+
+    <section class="widget widget-for-ad">
+       
+    </section>
+
+    <section class="widget widget-join-telegram">
+        <h2 class="widget-title widget-join-telegram-title">Join Our Telegram Group</h2><hr>
+        <div class="widget-join-telegram-icon">
+            <a href="https://t.me/new_movies_tolly4uofficial" rel="nofollow noopener" target="_blank" class="telegram-btn">
+                <i class="fab fa-telegram-plane"></i>&nbsp;Join Our Telegram Channel
+            </a>
+        </div>
+    </section>
+
+    <section id="search-2" class="widget widget-search">
+        <h2 class="widget-title">Search Whatever You Want</h2><hr>
+        <form method="POST" action="/search?_method=PUT" class="d-flex" role="search">
+            <input class="form-control me-2 search-inp-2" name="input" type="search" placeholder="Search what you want" aria-label="Search">
+            <button class="btn search-btn-2 sidebar-search-btn" type="submit"><i class="fa-solid fa-search"></i>Search</button>
+          </form>        
+    </section>
+
+    <section id="recent-posts-2" class="widget widget-recent-posts">
+        <h2 class="widget-title">Recent Posts</h2><hr>
+        <%- include("./recent-posts.ejs") -%>
+    </section>
+
+    <style>
+.widget_categories ul li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.widget_categories ul li:last-child {
+    border-bottom: none;
+}
+
+.widget_categories ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 4pxpx;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.widget_categories ul li:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.list-item-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+    </style>
+    <section id="categories-2" class="widget widget_categories">
+        <h2 class="widget-title">Categories</h2><hr>
+        <ul>
+            <li><div class="list-item-wrap"><a href="#">18+ [Adult]</a><span>3971+</span></div></li>
+            <li><div class="list-item-wrap"><a href="/bollywood">BollyWood</a><span>219+</span></div></li>
+            <li><div class="list-item-wrap"><a href="/action">Action</a><span>81+</span></div></li>
+            <li><div class="list-item-wrap"><a href="/romance">Romantic</a><span>201+</span></div></li>
+            <li><div class="list-item-wrap"><a href="/webseries">Web Series</a><span>6801+</span></div></li>
+            <li><div class="list-item-wrap"><a href="/comedy">Comedy</a><span>201+</span></div></li>
+            <li><div class="list-item-wrap"><a href="/horror">Horror</a><span>21+</span></div></li>
+            <li><div class="list-item-wrap"><a href="#">English Movies</a><span>261+</span></div></li>
+            <li><div class="list-item-wrap"><a href="#">Hindi Dubbed</a><span>541+</span></div></li>
+            <li><div class="list-item-wrap"><a href="/hollywood">HollyWood</a><span>223+</span></div></li>
+            <li><div class="list-item-wrap"><a href="#">South Hindi Movies</a></div></li>
+            <li><div class="list-item-wrap"><a href="#">Punjabi</a></div></li>
+            <li><div class="list-item-wrap"><a href="#">TV Shows</a></div></li>
+            <li><div class="list-item-wrap"><a href="#">Thriller</a></div></li>
+            <li><div class="list-item-wrap"><a href="#">Crime</a></div></li>
+            <li><div class="list-item-wrap"><a href="#">Drama</a></div></li>
+            <li><div class="list-item-wrap"><a href="#">Dual Audio</a></div></li>
+            <li><div class="list-item-wrap"><a href="#">Bengali</a></div></li>
+            <li><div class="list-item-wrap"><a href="#">Kannada</a></div></li>
+            <li><div class="list-item-wrap"><a href="#">Korean</a></div></li>
+            <li><div class="list-item-wrap"><a href="#">Malayalam</a></li>
+            <li><div class="list-item-wrap"><a href="#">Marathi</a></div></li>
+            <li><div class="list-item-wrap"><a href="#">Gujarati</a></div></li>
+            
+            
+        </ul>
+
+    </section>
+
+</div>

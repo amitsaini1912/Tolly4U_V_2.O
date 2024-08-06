@@ -1,0 +1,42 @@
+<% layout("./layouts/boilerplate.ejs") -%>
+<div class="bollywood-movies-container">
+    <p class="d-inline-flex gap-1">
+        <a class="btn btn-primary btn-letest" data-bs-toggle="collapse" href="#" role="button" aria-expanded="false" aria-controls="collapseExample">
+          Romantic Movies &nbsp;<i class="fa-sharp fa-solid fa-circle-chevron-down"></i>
+        </a>
+    </p>
+    <div class=" row-cols-2 row-cols-md-4 row-cols-lg-6 row g-4">
+        <% for(let film of romance){ %>
+            <a href="/<%=film.url%>" class="film-link">
+                <div class="card col">
+                    <img src="<%= film.filmPoster %>" class="card-img-top" alt="Download <%=film.originalTitle%> movie poster" style="height: 15rem;">
+                    <div class="card-body card-img-overlay">
+                        <p class="card-title">
+                            <%= film.originalTitle %>
+                        </p>
+                    </div>
+                    <div class="film-details">
+                        <p><%= film.title %></p>
+                        <p><%= film.description%></p>
+                    </div>
+                </div>
+            </a>
+        <% } %>
+    </div>
+    <div class="pagination-container mb-5">
+           <span class="preBtn-conatiner">
+                <% if (page> 1) { %>
+                   <a href="/romance?page=<%= page - 1 %>">
+                       <button class="btn preBtn btn-outline-info" type="submit">Previous</button>
+                    </a>
+                <% } %>
+           </span>
+            <span class="nextBtn-container">
+                <% if (page * limit < total) { %>
+                    <a href="/romance?page=<%= page + 1 %>">
+                       <button class="btn nextBtn btn-outline-info" type="submit">Next Page</button>
+                    </a>
+                <% } %>
+            </span>
+        </div>
+</div>

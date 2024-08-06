@@ -1,0 +1,82 @@
+<style>
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.site-info, .footer-menu {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-menu ul li a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.footer-menu ul li a:hover {
+    color: #fe424d
+}
+
+@media (max-width: 600px) {
+    .footer-main {
+        flex-direction: column;
+        align-items: center;
+    }
+    .site-info, .footer-menu {
+        margin-bottom: 10px;
+    }
+}
+
+    .footer-disclaimer{
+        width:100%; 
+        text-align:center; 
+        margin-top:20px;  
+        padding-bottom: 10px;
+    }
+</style>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-main-wrap">
+            <div class="footer-main">
+                <div class="site-info">
+                    <p>2024 ©<a href="/" style="color: #fe424d; font-weight: 500;">Tolly4U</a> | All Rights Reserved.</p>
+                </div>
+                <div class="footer-menu">
+                    <ul class="menu-item-wrap">
+                        <li class="menu-item"><a
+                                href="/dmca">DMCA</a></li>
+                        <li class="menu-item"><a
+                                href="/disclaimer">Disclaimer</a></li>
+                        <li class="menu-item"><a
+                                href="/contactus">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- .site-info -->
+         <hr>
+        <div class="footer-disclaimer">
+            <p><span style="color:#fe424d; font-weight: 500;">Note:</span> We Do not host any
+                files on our server. All files shared here are collected from the internet from various Encoders and
+                hosted on third-party sites. We do not accept responsibility for content hosted on third-party websites.
+                We just index those links which are already available on the internet.
+            </p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,26 @@
+
+<div class="seeAsWell-container mb-3">
+    <p class="d-inline-flex gap-1">
+        <a class="btn btn-primary btn-letest" data-bs-toggle="collapse" href="#" role="button" aria-expanded="false" aria-controls="collapseExample">
+          See As Well &nbsp;<i class="fa-sharp fa-solid fa-circle-chevron-down"></i>
+        </a>
+    </p>
+    <div class=" row-cols-2 row-cols-md-3 row-cols-lg-4 row g-4">
+        <% for(let film of seeAsWell.slice(0,12)){ %>
+            <a href="/<%=film.url%>" class="film-link">
+                <div class="card col">
+                    <img src="<%= film.filmPoster %>" class="card-img-top" alt="Download <%=film.originalTitle%> movie poster" style="height: 15rem;">
+                    <div class="card-body card-img-overlay">
+                        <p class="card-title">
+                            <%= film.originalTitle %>
+                        </p>
+                    </div>
+                    <div class="film-details">
+                        <p><%= film.title %></p>
+                        <p><%= film.description%></p>
+                    </div>
+                </div>
+            </a>
+        <% } %>
+    </div>
+</div>
