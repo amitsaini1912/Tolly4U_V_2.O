@@ -23,15 +23,8 @@ Tolly4U is a full-stack web application built using **Node.js**, **Express**, **
 - `models/` – Mongoose schemas
 - `public/` – Static assets (CSS, JS, images)
 
-## 🚀 Installation
-```bash
-git clone https://github.com/amitsaini1912/Tolly4U_V_2.O
-cd Tolly4U_V_2.O
-npm install
-npm app.js
-
-## Screenshoots
-![Screenshot 2025-05-30 181010](https://github.com/user-attachments/assets/a80f1085-c2a8-45fa-84d7-bcf79a72c06f)
+## 🚀 Screenshoots
+https://github.com/user-attachments/assets/a80f1085-c2a8-45fa-84d7-bcf79a72c06f
 ![Screenshot 2025-05-30 181001](https://github.com/user-attachments/assets/58a4346e-fd02-470c-8199-044dc77003b4)
 ![Screenshot 2025-05-30 180951](https://github.com/user-attachments/assets/f2fc7474-14f4-4d55-88cc-1e2ce1de0719)
 ![Screenshot 2025-05-30 180937](https://github.com/user-attachments/assets/09ac81d0-9eb0-4094-a292-fbec0a8e82da)
